@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'IBM VGA';
+    src: url("../fonts/IBM_VGA.ttf");
+}
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    font-family: 'IBM VGA', sans-serif;
+    color: rgb(238, 255, 0);
+    background: rgb(20, 20, 20);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 600px;
+}
+
+#song-list {
+    width: 100%;
+}
+
+#song-list thead {
+    text-align: left;
+}
+
+#song-list thead th {
+    padding: 10px 12px 8px 12px;
+    font-size: 22px;
+    font-weight: normal;
+    background: rgb(68, 0, 255);
+}
+
+#song-list tbody td {
+    padding: 10px 12px 8px 12px;
+    color: rgb(68, 0, 255);
+    background: rgb(223, 238, 17);
+}
+
+#song-list tfoot td {
+    padding: 10px 12px 8px 12px;
+    background: rgb(223, 238, 17);
+}
+
+#song-list tfoot td input {
+    width: 100%;
+    padding: 6px;
+}
+
+#song-list tfoot td input[type=text] {
+    
+}
+
+#song-list tfoot td input[type=submit] {
+    
+}
