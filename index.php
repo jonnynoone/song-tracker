@@ -1,3 +1,10 @@
+<?php
+include 'database.php';
+
+$query = "SELECT * FROM song_tracker";
+$result = mysqli_query($link, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +28,12 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Connie Francis</td>
-                    <td>Tennessee Waltz</td>
-                </tr>
+                <?php while($row = mysqli_fetch_assoc($result)) : ?>
+                    <tr>
+                        <td><?=$row['artist']?></td>
+                        <td><?=$row['title']?></td>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
 
             <tfoot>
@@ -33,7 +42,7 @@
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                     </tr>
-                    
+
                     <tr>
                         <td colspan="2"><input type="submit"></td>
                     </tr>
