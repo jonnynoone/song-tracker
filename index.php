@@ -19,6 +19,10 @@ $result = mysqli_query($link, $query);
 
 <body>
     <div class="container">
+        <?php if(isset($_GET['error'])) { ?>
+            <div class="error"><?=$_GET['error']?></div>
+        <?php } ?>
+
         <table id="song-list">
             <thead>
                 <tr>
@@ -28,7 +32,7 @@ $result = mysqli_query($link, $query);
             </thead>
 
             <tbody>
-                <?php while($row = mysqli_fetch_assoc($result)) : ?>
+                <?php while($row = mysqli_fetch_assoc($result)): ?>
                     <tr>
                         <td><?=$row['artist']?></td>
                         <td><?=$row['title']?></td>
@@ -39,12 +43,12 @@ $result = mysqli_query($link, $query);
             <tfoot>
                 <form action="process.php" method="post">
                     <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="artist"></td>
+                        <td><input type="text" name="title"></td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><input type="submit"></td>
+                        <td colspan="2"><input type="submit" name="submit"></td>
                     </tr>
                 </form>
             </tfoot>

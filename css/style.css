@@ -19,6 +19,13 @@ body {
     max-width: 600px;
 }
 
+.error {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: rgb(255, 0, 0);
+}
+
 #song-list {
     width: 100%;
 }
